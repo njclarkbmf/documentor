@@ -3,8 +3,8 @@ PDF document processor.
 """
 
 import PyPDF2
-from documetor.config import logger
-from documetor.processors.base import DocumentProcessor
+from documentor.config import logger
+from documentor.processors.base import DocumentProcessor
 
 
 class PDFProcessor(DocumentProcessor):

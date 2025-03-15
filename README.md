@@ -19,7 +19,7 @@ A powerful document embedding and semantic search library that converts PDF, Wor
 ## Project Structure
 
 ```
-documetor/
+documentor/
 ├── __init__.py               # Package initialization
 ├── __main__.py               # Entry point for CLI
 ├── cli.py                    # Command line interface
@@ -75,8 +75,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/documetor.git
-   cd documetor
+   git clone https://github.com/yourusername/documentor.git
+   cd documentor
    ```
 
 2. Create and activate a virtual environment:
@@ -108,26 +108,26 @@ The package includes a robust command-line interface:
 
 ```bash
 # Process documents in a directory
-documetor process --project-id=your-gcp-project --directory=path/to/docs
+documentor process --project-id=your-gcp-project --directory=path/to/docs
 
 # Search for documents
-documetor search --query="customer onboarding process" --top-k=5 --store-path=documents.pkl
+documentor search --query="customer onboarding process" --top-k=5 --store-path=documents.pkl
 
 # Get information about a vector store
-documetor info --store-path=documents.pkl
+documentor info --store-path=documents.pkl
 ```
 
 For help on specific commands:
 ```bash
-documetor --help
-documetor process --help
-documetor search --help
+documentor --help
+documentor process --help
+documentor search --help
 ```
 
 ### Python API
 
 ```python
-from documetor import DocumentEmbedder
+from documentor import DocumentEmbedder
 
 # Initialize the embedder
 embedder = DocumentEmbedder(
@@ -173,8 +173,8 @@ embedder = DocumentEmbedder(
 Extend Documetor to support additional document formats:
 
 ```python
-from documetor import DocumentProcessor
-from documetor.processors import register_processor
+from documentor import DocumentProcessor
+from documentor.processors import register_processor
 
 class CSVProcessor(DocumentProcessor):
     """Custom processor for CSV files"""
@@ -237,7 +237,7 @@ embedder = DocumentEmbedder(
 
 ### Installation Issues
 
-**Problem**: `ImportError: No module named 'documetor'`  
+**Problem**: `ImportError: No module named 'documentor'`  
 **Solution**: Make sure you've installed the package:
 ```bash
 pip install -e .
@@ -310,7 +310,7 @@ embedder = DocumentEmbedder(
 **Solution**: Check if you need to create the index first:
 ```bash
 # First run with create_if_not_exists=True
-documetor process --project-id=your-project --directory=docs --store-type=vertex
+documentor process --project-id=your-project --directory=docs --store-type=vertex
 ```
 
 ### Search Quality Issues
@@ -339,7 +339,7 @@ embedder = DocumentEmbedder(
 **Solution**: Check if your vector store exists and contains data:
 ```bash
 # For local stores:
-documetor info --store-path=your-store.pkl
+documentor info --store-path=your-store.pkl
 
 # For Vertex stores, check the index is properly deployed:
 gcloud ai index-endpoints list --region=your-region

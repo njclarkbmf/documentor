@@ -13,8 +13,8 @@ from google.cloud import aiplatform
 from google.cloud.aiplatform.matching_engine import MatchingEngineIndex
 from google.cloud.aiplatform.matching_engine import MatchingEngineIndexEndpoint
 
-from documetor.config import logger, DEFAULT_LOCATION
-from documetor.storage.base import VectorStore
+from documentor.config import logger, DEFAULT_LOCATION
+from documentor.storage.base import VectorStore
 
 
 class VertexMatchingEngineStore(VectorStore):

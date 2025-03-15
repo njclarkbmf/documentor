@@ -5,7 +5,7 @@ Text chunking functionality.
 import re
 from typing import List
 
-from documetor.config import DEFAULT_CHUNK_SIZE, DEFAULT_CHUNK_OVERLAP
+from documentor.config import DEFAULT_CHUNK_SIZE, DEFAULT_CHUNK_OVERLAP
 
 
 class TextChunker:

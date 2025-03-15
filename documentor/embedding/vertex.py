@@ -8,7 +8,7 @@ from typing import List
 from google.cloud import aiplatform
 from rich.progress import Progress, TextColumn, BarColumn, TimeElapsedColumn, TimeRemainingColumn
 
-from documetor.config import logger, DEFAULT_LOCATION, DEFAULT_BATCH_SIZE, NullContext
+from documentor.config import logger, DEFAULT_LOCATION, DEFAULT_BATCH_SIZE, NullContext
 
 
 class VertexEmbeddings:

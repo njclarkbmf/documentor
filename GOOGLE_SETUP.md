@@ -7,7 +7,7 @@ This guide walks you through setting up your Google Cloud environment for use wi
 1. Go to the [Google Cloud Console](https://console.cloud.google.com/)
 2. Click on the project dropdown at the top of the page
 3. Click "New Project"
-4. Enter a project name (e.g., "documetor-project")
+4. Enter a project name (e.g., "documentor-project")
 5. Click "Create"
 6. Wait for the project to be created and then select it
 
@@ -30,7 +30,7 @@ For each API:
 
 1. Go to [IAM & Admin > Service Accounts](https://console.cloud.google.com/iam-admin/serviceaccounts)
 2. Click "Create Service Account"
-3. Enter a service account name (e.g., "documetor-service")
+3. Enter a service account name (e.g., "documentor-service")
 4. Add a description: "Service account for Documetor document embedding"
 5. Click "Create and Continue"
 

@@ -11,12 +11,12 @@ from rich.json import JSON
 from rich.console import Console
 from rich.table import Table
 
-from documetor.config import (
+from documentor.config import (
     logger, DEFAULT_CHUNK_SIZE, DEFAULT_CHUNK_OVERLAP, DEFAULT_LOCATION,
     DEFAULT_EMBEDDING_MODEL, DEFAULT_BATCH_SIZE, DEFAULT_MAX_WORKERS,
     DEFAULT_CHUNK_STRATEGY, get_default_project_id
 )
-from documetor.core.embedder import DocumentEmbedder
+from documentor.core.embedder import DocumentEmbedder
 
 # Initialize CLI app
 app = typer.Typer(

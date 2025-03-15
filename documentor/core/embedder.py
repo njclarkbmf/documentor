@@ -10,18 +10,18 @@ from typing import List, Dict, Any, Optional
 
 from rich.progress import Progress, TextColumn, BarColumn, TimeElapsedColumn, TimeRemainingColumn
 
-from documetor.config import (
+from documentor.config import (
     logger, DEFAULT_CHUNK_SIZE, DEFAULT_CHUNK_OVERLAP, DEFAULT_LOCATION,
     DEFAULT_EMBEDDING_MODEL, DEFAULT_BATCH_SIZE, DEFAULT_MAX_WORKERS,
     DEFAULT_CHUNK_STRATEGY, NullContext
 )
-from documetor.processors import get_processor_for_file
-from documetor.processors.pdf import PDFProcessor
-from documetor.text.chunker import TextChunker
-from documetor.embedding.vertex import VertexEmbeddings
-from documetor.storage.base import VectorStore
-from documetor.storage.local import LocalVectorStore
-from documetor.storage.vertex import VertexMatchingEngineStore
+from documentor.processors import get_processor_for_file
+from documentor.processors.pdf import PDFProcessor
+from documentor.text.chunker import TextChunker
+from documentor.embedding.vertex import VertexEmbeddings
+from documentor.storage.base import VectorStore
+from documentor.storage.local import LocalVectorStore
+from documentor.storage.vertex import VertexMatchingEngineStore
 
 
 class DocumentEmbedder:
@@ -122,7 +122,7 @@ class DocumentEmbedder:
             directory_path: Path to directory containing documents
             recursive: Whether to recursively process subdirectories
         """
-        from documetor.processors import get_supported_extensions
+        from documentor.processors import get_supported_extensions
         
         # Get list of supported files
         supported_extensions = get_supported_extensions()

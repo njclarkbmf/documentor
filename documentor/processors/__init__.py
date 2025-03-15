@@ -5,9 +5,9 @@ Document processors for extracting text from various file formats.
 import os
 from typing import Dict, Type
 
-from documetor.processors.base import DocumentProcessor
-from documetor.processors.pdf import PDFProcessor
-from documetor.processors.docx import DocxProcessor
+from documentor.processors.base import DocumentProcessor
+from documentor.processors.pdf import PDFProcessor
+from documentor.processors.docx import DocxProcessor
 
 # Register built-in processors
 _PROCESSORS: Dict[str, Type[DocumentProcessor]] = {

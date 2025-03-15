@@ -7,8 +7,8 @@ import pickle
 import numpy as np
 from typing import List, Dict, Any, Optional
 
-from documetor.config import logger
-from documetor.storage.base import VectorStore
+from documentor.config import logger
+from documentor.storage.base import VectorStore
 
 
 class LocalVectorStore(VectorStore):
