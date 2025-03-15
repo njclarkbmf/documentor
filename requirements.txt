@@ -1,0 +1,19 @@
+# Core dependencies
+PyPDF2>=3.0.0
+python-docx>=0.8.11
+numpy>=1.22.0
+tqdm>=4.64.0
+typer>=0.9.0
+rich>=13.0.0
+colorama>=0.4.6
+
+# Google Cloud dependencies
+google-cloud-storage>=2.7.0
+google-cloud-aiplatform>=1.35.0
+
+# Optional dependencies for additional file formats
+# Uncomment if needed:
+# pptx-python>=0.6.21  # For PowerPoint files
+# openpyxl>=3.0.10     # For Excel files
+# beautifulsoup4>=4.11.1  # For HTML files
+# markdown>=3.4.1      # For Markdown files
