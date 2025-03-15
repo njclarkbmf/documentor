@@ -1,4 +1,4 @@
-# Documetor
+# Documentor
 
 A powerful document embedding and semantic search library that converts PDF, Word, and other document formats into vector embeddings using Google's Vertex AI.
 
@@ -100,6 +100,58 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
    export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your-service-account-key.json"
    ```
 
+### Running Without Installation
+
+During development, you may want to run the package without installing it. Here are several ways to do this:
+
+#### Method 1: Run as a module with Python's `-m` flag
+
+```bash
+# From the project root directory (where setup.py is located)
+python -m documentor --help
+```
+
+This tells Python to run the `documentor` package as a script, which executes the `__main__.py` file in the package.
+
+#### Method 2: Add the project directory to PYTHONPATH
+
+```bash
+# From any directory
+PYTHONPATH=/path/to/documentor-project python -c "from documentor.cli import app; app()"
+```
+
+This temporarily adds your project directory to Python's import path so it can find the module.
+
+#### Method 3: Create a simple wrapper script
+
+Create a file called `run_documentor.py` in your project root:
+
+```python
+#!/usr/bin/env python
+import sys
+import os
+
+# Add the parent directory to the path so Python can find the package
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
+
+# Import and run the CLI app
+from documentor.cli import app
+
+if __name__ == "__main__":
+    # Forward command line arguments to the app
+    sys.argv[0] = "documentor"  # Replace script name with command name
+    app()
+```
+
+Then make it executable and run it:
+
+```bash
+chmod +x run_documentor.py
+./run_documentor.py --help
+```
+
+These methods are especially useful during active development when you're making frequent changes to the code and don't want to reinstall the package each time.
+
 ## Usage
 
 ### Command Line Interface
@@ -170,7 +222,7 @@ embedder = DocumentEmbedder(
 
 ### Adding Custom Document Processors
 
-Extend Documetor to support additional document formats:
+Extend Documentor to support additional document formats:
 
 ```python
 from documentor import DocumentProcessor
@@ -187,7 +239,7 @@ class CSVProcessor(DocumentProcessor):
 # Register the processor
 register_processor('.csv', CSVProcessor)
 
-# Now Documetor will automatically use the CSVProcessor for .csv files
+# Now Documentor will automatically use the CSVProcessor for .csv files
 ```
 
 See the `examples/custom_processors.py` file for complete examples.
@@ -366,7 +418,7 @@ results = embedder.search("your query")
 ## Common Questions
 
 **Q: How much does Vertex AI usage cost?**  
-A: Documetor uses Vertex AI services that incur costs. See [Google Cloud Pricing](https://cloud.google.com/vertex-ai/pricing) for details. Use the local storage option for development to minimize costs.
+A: Documentor uses Vertex AI services that incur costs. See [Google Cloud Pricing](https://cloud.google.com/vertex-ai/pricing) for details. Use the local storage option for development to minimize costs.
 
 **Q: How many documents can I process?**  
 A: The local vector store is limited by RAM and disk space. Vertex Matching Engine scales to millions of vectors, making it suitable for large document collections.
@@ -384,7 +436,7 @@ index.export_embeddings('gs://your-bucket/export-path')
 See the [examples](examples/) directory for more advanced usage patterns, including:
 - Implementing custom document processors
 - Using Vertex Matching Engine for production deployments
-- Building search applications with Documetor
+- Building search applications with Documentor
 
 ## Contributing
 
